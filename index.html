@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seojisu Portpolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 다크모드 깜빡임 방지: 페이지 로드 즉시 실행 -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ────── CUSTOM CURSOR ────── -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ────── NAV ────── -->
+  <nav id="nav">
+    <div class="nav-logo">SEO<span>.</span>JISU</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#career">Career</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact" class="nav-cta">Contact →</a>
+    </div>
+    <div class="ham" id="ham" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ────── MOBILE NAV ────── -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" class="mnl">About</a>
+    <a href="#career" class="mnl">Career</a>
+    <a href="#skills" class="mnl">Skills</a>
+    <a href="#portfolio" class="mnl">Portfolio</a>
+    <a href="#contact" class="mnl">Contact</a>
+  </div>
+
+  <!-- ════════════════════════════════
+     01 INTRO
+════════════════════════════════ -->
+  <section id="home">
+
+    <!-- 타이포그래피 필드 배경 (Space Type Generator 스타일 모션그래픽) -->
+    <div class="field-svg-wrap" aria-hidden="true">
+      <video class="field-svg-img" autoplay loop muted playsinline poster="image/STGvessel.svg">
+        <source src="video/STG_vessel.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="field-fade" aria-hidden="true"></div>
+
+    <!-- 상단 메타 -->
+    <div class="intro-meta">
+      <div class="intro-meta-left">
+        <span class="intro-name">서지수 / SEO JISU</span>
+        <span class="intro-role">Frontend Developer &amp; Web Designer</span>
+      </div>
+      <div class="intro-status">
+        <span class="status-dot"></span>
+        Available for work
+      </div>
+    </div>
+
+    <!-- 메인 카피 — 화면 하단 정렬 -->
+    <div class="intro-body">
+      <!-- <h1 class="intro-ko">
+        <span class="line"><span class="word">생각을 설계하고,</span></span>
+        <span class="line"><span class="word">경험을 구현합니다.</span></span>
+      </h1> -->
+
+      <!-- Design the Thought. Build the Experience. -->
+
+      <p class="intro-en">생각을 설계하고, 경험을 구현합니다.</p>
+      <div class="intro-bar">
+        <div class="intro-scroll-hint">
+          <div class="intro-scroll-line"></div>
+          SCROLL
+        </div>
+        <div class="intro-ctas">
+          <a href="#portfolio" class="btn-primary">작업물 보기 →</a>
+          <a href="#contact" class="btn-secondary">연락하기</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 연도 워터마크 -->
+    <span class="intro-year">© 2026 — PORTFOLIO</span>
+
+  </section>
+
+  <!-- ════════════════════════════════
+     TECH STACK TAG GRID
+════════════════════════════════ -->
+  <div class="stack-section">
+    <div class="stack-inner">
+      <div class="stack-label"><span>✦</span> Tech Stack</div>
+      <div class="stack-divider"></div>
+      <div class="stack-tags">
+        <span class="stack-tag">HTML5</span>
+        <span class="stack-tag">CSS3</span>
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">Figma</span>
+        <span class="stack-tag">Git</span>
+        <span class="stack-tag">UI / UX</span>
+        <span class="stack-tag">Web Publishing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+     02 ABOUT
+════════════════════════════════ -->
+  <section id="about">
+    <div class="about-grid">
+
+      <!-- 프로필 이미지 -->
+      <div class="about-img-wrap reveal">
+        <div class="about-img-placeholder">
+          <img src="image/seojisu.jpg">
+        </div>
+        <div class="about-img-frame"></div>
+      </div>
+
+      <!-- 텍스트 -->
+      <div class="about-text">
+        <div class="sec-label reveal">About me</div>
+        <!-- <h2 class="sec-title reveal reveal-delay-1">코드로<br>소통합니다</h2> -->
+        <p class="about-desc reveal reveal-delay-2">
+          안녕하세요, <strong>서지수</strong>입니다.<br>
+          웹 퍼블리싱과 프론트엔드 개발을 아우르며
+          <strong>디자인과 기술의 경계</strong>를 탐구합니다.<br><br>
+          사용자가 실제로 경험하는 화면 하나하나에 책임감을 가지고,
+          깔끔한 코드와 감각적인 UI로 완성도 높은 웹을 만드는 것이 목표입니다.
+        </p>
+        <div class="about-tags reveal reveal-delay-3">
+          <span class="tag">📷 사진촬영</span>
+          <span class="tag">🎬 영화감상</span>
+          <span class="tag">☕ 카페 투어</span>
+          <span class="tag">✈ 여행</span>
+          <span class="tag">🏊‍♀️ 수영</span>
+        </div>
+        <div class="about-list reveal reveal-delay-4">
+          <div class="about-list-item">
+            <span class="ali-label">Name</span>
+            <span class="ali-value">서지수</span>
+          </div>
+          <div class="about-list-item">
+            <span class="ali-label">Birth</span>
+            <span class="ali-value">99. 05. 06</span>
+          </div>
+          <div class="about-list-item">
+            <span class="ali-label">Location</span>
+            <span class="ali-value">대한민국 광주광역시</span>
+          </div>
+          <div class="about-list-item">
+            <span class="ali-label">MBTI</span>
+            <span class="ali-value">ENFJ</span>
+          </div>
+          <div class="about-list-item">
+            <span class="ali-label">Status</span>
+            <span class="ali-value"><span class="badge">구직 중</span></span>
+          </div>
+          <div class="about-list-item">
+            <span class="ali-label">Education</span>
+            <span class="ali-value">연성대학교 유아교육학과</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     03 CAREER
+════════════════════════════════ -->
+  <section id="career">
+    <div class="career-grid">
+
+      <!-- 고정 사이드 타이틀 -->
+      <div class="career-sticky">
+        <div class="sec-label reveal">Career</div>
+        <h2 class="sec-title reveal reveal-delay-1">걸어온 길</h2>
+        <p class="reveal reveal-delay-2">다양한 환경에서 쌓아온 경험들이 지금의 저를 만들었습니다.</p>
+      </div>
+
+      <!-- 타임라인 -->
+      <div class="career-timeline">
+        <div class="career-rail">
+          <div class="career-rail-fill" id="careerRailFill"></div>
+        </div>
+
+        <div class="career-item">
+          <span class="career-dot"></span>
+          <div class="career-header">
+            <span class="career-company">자격증</span>
+            <span class="career-period">취득 이력</span>
+          </div>
+          <div class="career-role">보유 자격증</div>
+          <p class="career-desc">GTQ 포토샵 1급 · 웹디자인기능사 · ITQ 마스터 등 보유 자격증을 이 곳에 정리해두세요.</p>
+          <div class="career-tags">
+            <span class="ctag">웹디자인개발기능사</span><span class="ctag">컴퓨터그래픽스기능사</span><span class="ctag">전자출판기능사</span>
+            <span class="ctag">GTQ 1급</span><span class="ctag">GTQ i 1급</span><span class="ctag">컴퓨터활용능력 2급</span><span
+              class="ctag">유치원 정교사 2급</span>
+            <span class="ctag">보육교사 2급</span><span class="ctag">사회복지사 2급</span><span class="ctag">운전면허 2종 보통</span>
+          </div>
+        </div>
+
+        <div class="career-item">
+          <span class="career-dot"></span>
+          <div class="career-header">
+            <span class="career-company">연성대학교</span>
+            <span class="career-period">2018.03 — 2022.02</span>
+          </div>
+          <div class="career-role">졸업 · 유아교육학과</div>
+          <p class="career-desc">시각디자인 전공을 통해 타이포그래피, 편집디자인, 브랜딩, 영상 등 디자인 전반의 기초를 탄탄히 다졌습니다.</p>
+          <div class="career-tags">
+            <span class="ctag">Photoshop</span><span class="ctag">Illustrator</span><span class="ctag">Premiere</span>
+          </div>
+        </div>
+
+        <div class="career-item">
+          <span class="career-dot"></span>
+          <div class="career-header">
+            <span class="career-company">전남아이돌봄광역지원센터</span>
+            <span class="career-period">2023.08 — 2025.10</span>
+          </div>
+          <div class="career-role">사원 · 사업관리팀</div>
+          <p class="career-desc">실무에서 쌓은 경험이나 프리랜서 활동 내용을 여기에 작성해주세요. 어떤 프로젝트를 진행했는지, 어떤 역할을 맡았는지 구체적으로 기술하면 좋습니다.</p>
+          <div class="career-tags">
+            <span class="ctag">React</span><span class="ctag">SCSS</span><span class="ctag">Git</span>
+          </div>
+        </div>
+
+        <div class="career-item">
+          <span class="career-dot"></span>
+          <div class="career-header">
+            <span class="career-company">[DAC100 2기] 디자인 올인원 100일 실무 챌린지</span>
+            <span class="career-period">2026.02 — 2026.05</span>
+          </div>
+          <div class="career-role">수료/개근 · 디자인 올인원</div>
+          <p class="career-desc">디자인 실무 감각을 익히기 위한 100일 챌린지를 완료했습니다.</p>
+          <div class="career-tags">
+            <span class="ctag">Photoshop</span><span class="ctag">Illustrator</span><span class="ctag">InDesign</span>
+          </div>
+        </div>
+
+        <div class="career-item">
+          <span class="career-dot"></span>
+          <div class="career-header">
+            <span class="career-company">[스마트웹 &amp; 콘텐츠개발] UI/UX웹디자인 웹퍼블리셔 프론트엔드 전문가 양성 과정</span>
+            <span class="career-period">2025.12 — 2026.07</span>
+          </div>
+          <div class="career-role">수료 · 국제직업전문학교</div>
+          <p class="career-desc">HTML, CSS, JavaScript, jQuery 기반의 반응형 웹사이트 제작과 웹 퍼블리싱 전반을 학습했습니다. Figma를 활용한 UI/UX 설계 및
+            실무형 프로젝트를 수행하였습니다.</p>
+          <div class="career-tags">
+            <span class="ctag">HTML5</span><span class="ctag">CSS3</span>
+            <span class="ctag">JavaScript</span><span class="ctag">jQuery</span><span class="ctag">Figma</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     04 SKILLS
+════════════════════════════════ -->
+  <section id="skills">
+    <div class="inner">
+      <div class="sec-label reveal">Skills</div>
+      <h2 class="sec-title reveal reveal-delay-1">기술 스택</h2>
+
+      <!-- 탭 -->
+      <div class="skills-tabs">
+        <button class="stab active" data-tab="frontend">Frontend</button>
+        <button class="stab" data-tab="design">Design</button>
+        <button class="stab" data-tab="tools">Tools</button>
+      </div>
+
+      <!-- Frontend -->
+      <div class="skills-panel active" id="tab-frontend">
+        <div class="skill-card reveal">
+          <div class="skill-icon">🌐</div>
+          <div class="skill-name">HTML5</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="70"></div>
+          </div>
+          <div class="skill-level">웹 표준 · 접근성</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-icon">🎨</div>
+          <div class="skill-name">CSS3</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="70"></div>
+          </div>
+          <div class="skill-level">Flex · Grid · 애니메이션</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-icon">⚡</div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="70"></div>
+          </div>
+          <div class="skill-level">ES6+ · DOM 조작</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-3">
+          <div class="skill-icon">💎</div>
+          <div class="skill-name">jQuery</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="70"></div>
+          </div>
+          <div class="skill-level">이벤트 · 오픈소스 활용</div>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="skills-panel" id="tab-design">
+        <div class="skill-card reveal">
+          <div class="skill-icon">🖌️</div>
+          <div class="skill-name">Figma</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80"></div>
+          </div>
+          <div class="skill-level">UI 설계 · 프로토타이핑</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-icon">🖼️</div>
+          <div class="skill-name">Photoshop</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85"></div>
+          </div>
+          <div class="skill-level">편집 · 보정 · 상세페이지</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-icon">✏️</div>
+          <div class="skill-name">Illustrator</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="75"></div>
+          </div>
+          <div class="skill-level">로고 · 아이콘 · 벡터</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-3">
+          <div class="skill-icon">📰</div>
+          <div class="skill-name">InDesign</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="75"></div>
+          </div>
+          <div class="skill-level">편집 디자인 · 인쇄물 레이아웃</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-4">
+          <div class="skill-icon">🎬</div>
+          <div class="skill-name">Premiere Pro</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="60"></div>
+          </div>
+          <div class="skill-level">영상 편집 기초</div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skills-panel" id="tab-tools">
+        <div class="skill-card reveal">
+          <div class="skill-icon">🐙</div>
+          <div class="skill-name">Git / GitHub</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="72"></div>
+          </div>
+          <div class="skill-level">버전관리 · 협업</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-icon">📋</div>
+          <div class="skill-name">Notion</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80"></div>
+          </div>
+          <div class="skill-level">문서화 · 프로젝트 관리</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-icon">💻</div>
+          <div class="skill-name">VS Code</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80"></div>
+          </div>
+          <div class="skill-level">주력 에디터</div>
+        </div>
+        <div class="skill-card reveal reveal-delay-3">
+          <div class="skill-icon">✨</div>
+          <div class="skill-name">Claude</div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85"></div>
+          </div>
+          <div class="skill-level">코드 리뷰 · 페어 프로그래밍</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+     05 PORTFOLIO — 가로 스크롤 (디자인/웹 탭 필터링)
+════════════════════════════════ -->
+  <div id="portfolio">
+
+    <div class="hscroll-wrap">
+
+      <!-- Sticky 레이어 -->
+      <div class="hscroll-sticky">
+
+        <!-- 카테고리 탭 (모바일에서도 항상 노출) -->
+        <div class="portfolio-tabs">
+          <button class="stab active" data-group="web">웹 개발</button>
+          <button class="stab" data-group="design">디자인</button>
+        </div>
+
+        <!-- 상단 중앙 고정 타이틀 -->
+        <div class="hscroll-title-bar">
+          <div class="sec-label" id="portfolioLabel">Portfolio — Web</div>
+          <h2 class="hscroll-title" id="portfolioTitle">웹 개발 작업물</h2>
+        </div>
+
+        <!-- 우측 상단 진행 표시기 -->
+        <div class="hscroll-header">
+          <div></div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <div class="hscroll-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              스크롤해서 탐색하기
+            </div>
+            <div class="hscroll-progress-wrap">
+              <div class="hscroll-progress-bar">
+                <div class="hscroll-progress-fill"></div>
+              </div>
+              <span class="hscroll-progress-num">01 / 01</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 카드 트랙 -->
+        <div class="hscroll-track-wrap">
+          <div class="hscroll-edge-fade left"></div>
+          <div class="hscroll-edge-fade right"></div>
+          <div class="hscroll-track">
+
+            <!-- ── 웹 개발 작업물 ── -->
+            <a class="hcard" data-group="web" data-cat="개인프로젝트" data-title="포트폴리오 웹사이트" data-img="image/portpolio.PNG"
+              data-desc="반응형 퍼스널 포트폴리오 사이트" data-stack="HTML,CSS,JavaScript"
+              data-year="2026" data-period="2026.01 - 2026.02" data-link="">
+              <div class="hcard-img">
+                <div class="hcard-img-inner">
+                  <img src="image/portpolio.PNG" alt="PORTPOLIO WEBSITE">
+                </div>
+                <span class="hcard-cat">개인프로젝트</span>
+              </div>
+              <div class="hcard-body">
+                <div class="hcard-head">
+                  <div class="hcard-title">포트폴리오 웹사이트</div>
+                  <span class="hcard-arrow">↗</span>
+                </div>
+                <p class="hcard-desc">반응형 퍼스널 포트폴리오 사이트</p>
+                <div class="hcard-stack">
+                  <span class="hcard-tag">HTML</span><span class="hcard-tag">CSS</span>
+                  <span class="hcard-tag">JavaScript</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- 앞으로 추가할 웹 개발 작업물은 data-group="web" 을 유지한 채
+                 위 .hcard 구조를 복사해서 이 자리에 이어 붙이면 됩니다. -->
+
+          
+
+            <!-- ── 디자인 작업물 ── -->
+            <a class="hcard" data-group="design" data-cat="개인프로젝트" data-title="리디자인" data-desc="브랜드 경험을 강화하기 위한 상하농원 홈페이지 리디자인"
+              data-stack="Figma" data-year="2026" data-period="2026.01 - 2026.02" data-img="image/sangha_redesign.PNG"
+              data-link="https://www.figma.com/proto/F2dzObG0VzktG1i8JKMIKo/%EC%83%81%ED%95%98%EB%86%8D%EC%9B%90_%EB%A6%AC%EB%94%94%EC%9E%90%EC%9D%B8?node-id=43-307&t=G0D5QDUHxtHXpIye-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+              target="_blank" rel="noopener noreferrer">
+              <div class="hcard-img">
+                <div class="hcard-img-inner">
+                  <img src="image/sangha_redesign.PNG" alt="상하농원 리디자인">
+                </div>
+                <span class="hcard-cat">개인프로젝트</span>
+              </div>
+              <div class="hcard-body">
+                <div class="hcard-head">
+                  <div class="hcard-title">리디자인</div>
+                  <span class="hcard-arrow">↗</span>
+                </div>
+                <p class="hcard-desc">브랜드 경험을 강화하기 위한 상하농원 홈페이지 리디자인</p>
+                <div class="hcard-stack">
+                  <span class="hcard-tag">Figma</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="hcard" data-group="design" data-cat="개인프로젝트" data-title="어플 디자인" data-desc="집에 있는 재료로 나만의 도시락을 완성하는 맞춤형 레시피 앱 디자인"
+              data-stack="Figma" data-year="2026" data-period="2026.01 - 2026.02" data-img="image/babkan/1.png, image/babkan/2.png, image/babkan/3.png, image/babkan/4.png,
+               image/babkan/5.png, image/babkan/6.png, image/babkan/7.png, image/babkan/8.png, 
+               image/babkan/9.png, image/babkan/10.png, image/babkan/11.png, image/babkan/12.png, 
+               image/babkan/13.png, image/babkan/14.png"
+              data-link="https://www.figma.com/proto/xYCITjqObwNebozyqZF4d2/..." target="_blank"
+              rel="noopener noreferrer">
+              <div class="hcard-img">
+                <div class="hcard-img-inner">
+                  <img src="image/Frame 30.png" alt="어플 디자인">
+                </div>
+                <span class="hcard-cat">개인프로젝트</span>
+              </div>
+              <div class="hcard-body">
+                <div class="hcard-head">
+                  <div class="hcard-title">어플 디자인</div>
+                  <span class="hcard-arrow">↗</span>
+                </div>
+                <p class="hcard-desc">집에 있는 재료로 나만의 도시락을 완성하는 맞춤형 레시피 앱 디자인</p>
+                <div class="hcard-stack">
+                  <span class="hcard-tag">Figma</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="hcard" data-group="design" data-cat="개인프로젝트" data-title="SNS 카드뉴스"
+              data-desc="브랜드가 가진 맑고 건강한 분위기를 정돈된 비주얼로 표현한 뷰티 프로모션 디자인." data-stack="Photoshop,Illustrator"
+              data-year="2026" data-period="2026.01 - 2026.02" data-img="image/1.png, image/2.png, image/3.png, image/4.png, image/5.png, image/6.png"
+              data-link="">
+              <div class="hcard-img">
+                <div class="hcard-img-inner">
+                  <img src="image/3.png" alt="SNS 카드뉴스">
+                </div>
+                <span class="hcard-cat">개인프로젝트</span>
+              </div>
+              <div class="hcard-body">
+                <div class="hcard-head">
+                  <div class="hcard-title">SNS 카드뉴스</div>
+                  <span class="hcard-arrow">↗</span>
+                </div>
+                <p class="hcard-desc">브랜드가 가진 맑고 건강한 분위기를 정돈된 비주얼로 표현한 뷰티 프로모션 디자인.</p>
+                <div class="hcard-stack">
+                  <span class="hcard-tag">Photoshop</span><span class="hcard-tag">Illustrator</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="hcard" data-group="design" data-cat="개인프로젝트" data-title="제품 상세페이지 디자인"
+              data-desc="누구나 부담 없이 즐길 수 있는 짜장떡볶이의 브랜드 스토리를 담은 상세페이지 디자인." data-cols="1"
+              data-stack="Photoshop,Illustrator" data-year="2026" data-period="2026.01 - 2026.02"
+              data-img="image/p1.PNG, image/p2.PNG, image/p3.PNG, image/p4.PNG, image/p5.PNG, image/p6.PNG, image/p7.PNG"
+              data-link="">
+              <div class="hcard-img">
+                <div class="hcard-img-inner">
+                  <img src="image/page2.PNG" alt="상세페이지">
+                </div>
+                <span class="hcard-cat">개인프로젝트</span>
+              </div>
+              <div class="hcard-body">
+                <div class="hcard-head">
+                  <div class="hcard-title">제품 상세페이지 디자인</div>
+                  <span class="hcard-arrow">↗</span>
+                </div>
+                <p class="hcard-desc">누구나 부담 없이 즐길 수 있는 짜장떡볶이의 브랜드 스토리를 담은 상세페이지 디자인.</p>
+                <div class="hcard-stack">
+                  <span class="hcard-tag">Photoshop</span><span class="hcard-tag">Illustrator</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="hcard" data-group="design" data-cat="개인프로젝트" data-title="패키지 디자인" data-desc="자연주의 브랜드 '크럼비'의 그래놀라 패키지 및 굿즈 디자인"
+              data-stack="Photoshop,Illustrator" data-year="2026" data-period="2026.01 - 2026.02" data-img="image/package.png" data-link="">
+              <div class="hcard-img">
+                <div class="hcard-img-inner">
+                  <img src="image/package.png" alt="패키지 디자인">
+                </div>
+                <span class="hcard-cat">개인프로젝트</span>
+              </div>
+              <div class="hcard-body">
+                <div class="hcard-head">
+                  <div class="hcard-title">패키지 디자인</div>
+                  <span class="hcard-arrow">↗</span>
+                </div>
+                <p class="hcard-desc">자연주의 브랜드 '크럼비'의 그래놀라 패키지 및 굿즈 디자인</p>
+                <div class="hcard-stack">
+                  <span class="hcard-tag">Photoshop</span><span class="hcard-tag">Illustrator</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="hcard" data-group="design" data-cat="개인프로젝트" data-title="전시 포스터 디자인"
+              data-desc="문장과 감정 사이의 '여백'을 타이포그래피와 흑백 그래픽으로 시각화한 독립출판 전시 포스터 디자인." data-stack="Photoshop,Illustrator"
+              data-year="2026" data-period="2026.01 - 2026.02" data-img="image/poster.png" data-link="">
+              <div class="hcard-img">
+                <div class="hcard-img-inner">
+                  <img src="image/poster.png" alt="전시 포스터 디자인">
+                </div>
+                <span class="hcard-cat">개인프로젝트</span>
+              </div>
+              <div class="hcard-body">
+                <div class="hcard-head">
+                  <div class="hcard-title">전시 포스터 디자인</div>
+                  <span class="hcard-arrow">↗</span>
+                </div>
+                <p class="hcard-desc">문장과 감정 사이의 '여백'을 타이포그래피와 흑백 그래픽으로 시각화한 독립출판 전시 포스터 디자인.</p>
+                <div class="hcard-stack">
+                  <span class="hcard-tag">Photoshop</span><span class="hcard-tag">Illustrator</span>
+                </div>
+              </div>
+            </a>
+
+            
+
+          </div><!-- /.hscroll-track -->
+        </div><!-- /.hscroll-track-wrap -->
+      </div><!-- /.hscroll-sticky -->
+    </div><!-- /.hscroll-wrap -->
+
+  </div><!-- /#portfolio -->
+
+  <!-- ════════════════════════════════
+     06 CONTACT
+════════════════════════════════ -->
+  <section id="contact">
+    <div class="inner">
+      <div class="sec-label reveal">Contact</div>
+      <div class="contact-big reveal reveal-delay-1">
+        LET'S<br><span>WORK.</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="status-badge reveal">
+            <span class="status-dot"></span> 현재 구직 중입니다
+          </div>
+          <a href="mailto:your@email.com" class="contact-link reveal reveal-delay-1">
+            <span class="cl-icon">✉</span>
+            <div>
+              <span class="cl-label">Email</span>
+              <span class="cl-val">monsoon_99@naver.com</span>
+            </div>
+          </a>
+          <a href="https://github.com/yourid" target="_blank" class="contact-link reveal reveal-delay-2">
+            <span class="cl-icon">⌥</span>
+            <div>
+              <span class="cl-label">GitHub</span>
+              <span class="cl-val">github.com/yourid</span>
+            </div>
+          </a>
+          <a href="#" class="contact-link reveal reveal-delay-3">
+            <span class="cl-icon">in</span>
+            <div>
+              <span class="cl-label">LinkedIn</span>
+              <span class="cl-val">linkedin.com/in/yourid</span>
+            </div>
+          </a>
+        </div>
+
+        <form class="contact-form reveal reveal-delay-2" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>NAME</label>
+            <input type="text" placeholder="이름을 입력해주세요" required>
+          </div>
+          <div class="form-group">
+            <label>EMAIL</label>
+            <input type="email" placeholder="이메일 주소를 입력해주세요" required>
+          </div>
+          <div class="form-group">
+            <label>MESSAGE</label>
+            <textarea placeholder="메시지를 입력해주세요"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">
+            메시지 보내기 →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- ════════════════════════════════
+     PORTFOLIO MODAL
+════════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="작업물 상세">
+    <!-- wrapper가 border-radius + overflow:hidden 담당 -->
+    <div class="modal-wrapper">
+      <div class="modal-box" id="modalBox">
+
+        <button class="modal-close" id="modalClose" aria-label="닫기">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <div class="modal-content">
+          <div class="modal-meta">
+            <span class="modal-cat" id="modalCat"></span>
+            <span class="modal-sep" id="modalSep">|</span>
+            <span class="modal-period" id="modalPeriod"></span>
+          </div>
+          <h3 class="modal-title" id="modalTitle"></h3>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-stack" id="modalStack"></div>
+          <a class="modal-link" id="modalLink" href="#" target="_blank" rel="noopener noreferrer">
+            사이트 바로가기 ↗
+          </a>
+        </div>
+
+        <div class="modal-img-list"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+     FLOATING BUTTONS
+════════════════════════════════ -->
+  <div class="fab-group">
+    <button class="fab" id="fab-top" aria-label="맨 위로 이동" title="맨 위로">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+    <button class="fab" id="fab-theme" aria-label="테마 전환" title="라이트/다크 전환">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- ════════════════════════════════
+     FOOTER
+════════════════════════════════ -->
+  <footer>
+    <p class="footer-copy">© 2026 <span>SEO JISU</span>. 개인 포트폴리오 사이트입니다.</p>
+    <a href="#home" class="scroll-top">↑ 맨 위로</a>
+  </footer>
+
+</body>
+
+<!-- JavaScript -->
+<script src="js/jquery.js"></script>
+<script src="js/field-bg.js"></script>
+<script src="js/script.js"></script>
+
+</html>
