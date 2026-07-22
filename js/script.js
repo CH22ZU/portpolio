@@ -521,12 +521,36 @@ document.querySelectorAll('.hscroll-wrap').forEach(function (wrap) {
 ════════════════════════════════ */
 function handleSubmit(e) {
   e.preventDefault();
+  const form = e.target;
   const btn = document.getElementById('submitBtn');
-  btn.textContent = '전송 완료 ✓';
-  btn.style.background = '#1D9E75';
-  setTimeout(() => {
-    btn.textContent = '메시지 보내기 →';
-    btn.style.background = '';
-    e.target.reset();
-  }, 3000);
+  const originalText = '메시지 보내기 →';
+
+  btn.textContent = '전송 중...';
+  btn.disabled = true;
+
+  fetch('https://formspree.io/f/xykrdyaj', {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  })
+    .then(response => {
+      if (response.ok) {
+        btn.textContent = '전송 완료 ✓';
+        btn.style.background = '#1D9E75';
+        form.reset();
+      } else {
+        throw new Error('전송 실패');
+      }
+    })
+    .catch(() => {
+      btn.textContent = '전송 실패, 다시 시도해주세요';
+      btn.style.background = '#E05555';
+    })
+    .finally(() => {
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    });
 }
